@@ -16,6 +16,7 @@ public class Specialty {
 
     @Column(name = "specialty")
     private String specialty;
+    
     public Specialty() {
     }
 
