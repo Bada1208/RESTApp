@@ -1,10 +1,11 @@
 package com.sysoiev.rest.model;
 
 import org.hibernate.annotations.GenericGenerator;
-
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import javax.persistence.*;
 import java.util.Objects;
 
+@JsonAutoDetect
 @Entity
 @Table(name = "specialties")
 public class Specialty {
