@@ -20,11 +20,11 @@ create table if not exists accounts
 );
 create table if not exists customers
 (
-    id         bigint primary key auto_increment,
-    name       varchar(155),
-    surname    varchar(155),
+    id           bigint primary key auto_increment,
+    name         varchar(155),
+    surname      varchar(155),
     specialty_id bigint,
-    account_id bigint,
-    foreign key (specialty_id)references specialties(id),
+    account_id   bigint,
+    foreign key (specialty_id) references specialties (id),
     foreign key (account_id) references accounts (id)
 );
