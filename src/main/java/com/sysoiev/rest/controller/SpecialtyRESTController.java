@@ -29,7 +29,7 @@ public class SpecialtyRESTController {
     }
 
     @DELETE
-    @Path("delete/{id}")
+    @Path("/delete/{id}")
     public Response deleteSpecialty(@PathParam("id") Long index) {
         Specialty specialty = specialtyRepository.getById(index);
         specialtyRepository.deleteById(index);
@@ -42,7 +42,7 @@ public class SpecialtyRESTController {
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("update/{id}")
+    @Path("/update/{id}")
     public Response updateSpecialty(@PathParam("id") Long index, Specialty updateSpecialty) {
         updateSpecialty.setId(index);
         specialtyRepository.update(updateSpecialty);
@@ -50,7 +50,7 @@ public class SpecialtyRESTController {
     }
 
     @GET
-    @Path("get/{id}")
+    @Path("/get/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getValueByIndex(@PathParam("id") Long index) {
         Specialty specialty = specialtyRepository.getById(index);
