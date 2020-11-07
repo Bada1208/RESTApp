@@ -1,6 +1,5 @@
 package com.sysoiev.rest.repository.impl;
 
-
 import com.sysoiev.rest.model.Specialty;
 import com.sysoiev.rest.repository.SpecialtyRepository;
 import com.sysoiev.rest.util.SessionUtil;

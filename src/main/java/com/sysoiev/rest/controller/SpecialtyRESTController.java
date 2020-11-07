@@ -15,21 +15,19 @@ public class SpecialtyRESTController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/list")
     public List<Specialty> printAll() {
         return specialtyRepository.getAll();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/save")
     public Response saveSpecialty(Specialty newSpecialty) {
         specialtyRepository.save(newSpecialty);
         return Response.ok(Response.Status.CREATED).build();
     }
 
     @DELETE
-    @Path("/delete/{id}")
+    @Path("/{id}")
     public Response deleteSpecialty(@PathParam("id") Long index) {
         Specialty specialty = specialtyRepository.getById(index);
         specialtyRepository.deleteById(index);
@@ -42,7 +40,7 @@ public class SpecialtyRESTController {
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/update/{id}")
+    @Path("/{id}")
     public Response updateSpecialty(@PathParam("id") Long index, Specialty updateSpecialty) {
         updateSpecialty.setId(index);
         specialtyRepository.update(updateSpecialty);
@@ -50,7 +48,7 @@ public class SpecialtyRESTController {
     }
 
     @GET
-    @Path("/get/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getValueByIndex(@PathParam("id") Long index) {
         Specialty specialty = specialtyRepository.getById(index);
